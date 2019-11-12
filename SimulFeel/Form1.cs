@@ -56,15 +56,12 @@ namespace SimulFeel
 
             if (!(string.IsNullOrEmpty(textMin.Text)) && !(string.IsNullOrEmpty(textMax.Text)))
             {
-                if ((Convert.ToInt32(textMin.Text) >= 0) && (Convert.ToInt32(textMin.Text) <= 99) &&
-                    (Convert.ToInt32(textMax.Text) >= 0) && (Convert.ToInt32(textMax.Text) <= 99))
+                if (!(((Convert.ToInt32(textMin.Text) >= 0) && (Convert.ToInt32(textMin.Text) <= 99)) &&
+                    ((Convert.ToInt32(textMax.Text) >= 0) && (Convert.ToInt32(textMax.Text) <= 99))))
                 {
                     textMin.Text = "49";
                     textMax.Text = "99";
                 }
-                textMin.Text = "49";
-                textMax.Text = "99";
-            }
 
             movePositionReal = Convert.ToUInt32(((((Convert.ToDouble(textMax.Text) - Convert.ToDouble(textMin.Text)) / 100) * movePosition) + Convert.ToDouble(textMin.Text)));
 
@@ -96,6 +93,7 @@ namespace SimulFeel
 
             await Task.Delay(TimeSpan.FromMilliseconds(delayTime));
             timer2.Enabled = false;
+            }
         }
 
         private async void ConnectToolStripMenuItem_ClickAsync(object sender, EventArgs e)
@@ -906,10 +904,10 @@ namespace SimulFeel
             if (!(string.IsNullOrEmpty(textStart.Text)) && !(string.IsNullOrEmpty(textEnd.Text)) &&
                 !(string.IsNullOrEmpty(textSpeed.Text)) && !(string.IsNullOrEmpty(textDelay.Text)))
                 {
-                if ((Convert.ToInt32(textStart.Text) >= 0) && (Convert.ToInt32(textStart.Text) <= 99) &&
-                    (Convert.ToInt32(textEnd.Text) >= 0) && (Convert.ToInt32(textEnd.Text) <= 99) &&
-                    (Convert.ToInt32(textSpeed.Text) >= 0) && (Convert.ToInt32(textSpeed.Text) <= 99) &&
-                    (Convert.ToInt32(textDelay.Text) >= 100) && (Convert.ToInt32(textDelay.Text) <= 5000))
+                if ((((Convert.ToInt32(textStart.Text) >= 0) && (Convert.ToInt32(textStart.Text) <= 99)) &&
+                    ((Convert.ToInt32(textEnd.Text) >= 0) && (Convert.ToInt32(textEnd.Text) <= 99)) &&
+                    ((Convert.ToInt32(textSpeed.Text) >= 0) && (Convert.ToInt32(textSpeed.Text) <= 99)) &&
+                    ((Convert.ToInt32(textDelay.Text) >= 100) && (Convert.ToInt32(textDelay.Text) <= 5000))))
                 {
                     button9.Enabled = false;
                     textMin.Enabled = false;
