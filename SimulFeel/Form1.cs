@@ -311,9 +311,10 @@ namespace SimulFeel
                         running = 0;
                     }
 
-                    if (trackSpeed.Value == 0) { moveSpeed = 29; delayTime = 500; }
+                    if (trackSpeed.Value == 0) { moveSpeed = 39; delayTime = 500; }
                     else if (trackSpeed.Value == 1) { moveSpeed = 49; delayTime = 400; }
-                    else if (trackSpeed.Value == 2) { moveSpeed = 69; delayTime = 300; }
+                    else if (trackSpeed.Value == 2) { moveSpeed = 59; delayTime = 300; }
+                    else if (trackSpeed.Value == 3) { moveSpeed = 69; delayTime = 200; }
 
                     movePosition = 0; await SendCommand();
                     movePosition = 99; await SendCommand();
@@ -341,9 +342,10 @@ namespace SimulFeel
                         running = 0;
                     }
 
-                    if (trackSpeed.Value == 0) { moveSpeed = 29; delayTime = 500; }
+                    if (trackSpeed.Value == 0) { moveSpeed = 39; delayTime = 500; }
                     else if (trackSpeed.Value == 1) { moveSpeed = 49; delayTime = 400; }
-                    else if (trackSpeed.Value == 2) { moveSpeed = 69; delayTime = 300; }
+                    else if (trackSpeed.Value == 2) { moveSpeed = 59; delayTime = 300; }
+                    else if (trackSpeed.Value == 3) { moveSpeed = 69; delayTime = 200; }
 
                     movePosition = 49; await SendCommand();
                     movePosition = 99; await SendCommand();
@@ -372,9 +374,10 @@ namespace SimulFeel
                         running = 0;
                     }
 
-                    if (trackSpeed.Value == 0) { moveSpeed = 29; delayTime = 500; }
+                    if (trackSpeed.Value == 0) { moveSpeed = 39; delayTime = 500; }
                     else if (trackSpeed.Value == 1) { moveSpeed = 49; delayTime = 400; }
-                    else if (trackSpeed.Value == 2) { moveSpeed = 69; delayTime = 300; }
+                    else if (trackSpeed.Value == 2) { moveSpeed = 59; delayTime = 300; }
+                    else if (trackSpeed.Value == 3) { moveSpeed = 69; delayTime = 200; }
 
                     movePosition = 0; await SendCommand();
                     movePosition = 49; await SendCommand();
@@ -991,7 +994,7 @@ namespace SimulFeel
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            trackSpeed.Value = (random.Next(0, 3));
+            trackSpeed.Value = (random.Next(0, 4));
         }
 
         private async void Button12_ClickAsync(object sender, EventArgs e)
